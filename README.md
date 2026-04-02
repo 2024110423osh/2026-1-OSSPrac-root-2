@@ -15,6 +15,6 @@
 ## 성명: 오지윤
 ### 학과: 경영정보학과
 
-# Fetch & Merge
-## A
+## Fetch & Merge
+### A
 ### B
