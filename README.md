@@ -42,7 +42,7 @@ Google Gemini AI를 활용한 프로필/팀 이미지 자동 생성, 질문게�
 
 ### ✏️ 팀페이지 제작
 - 팀명, 팀 소개, 팀 이미지 입력
-- 최대 **4명** 팀원 입력 (이름, 학번, 학과, 성별, 역할, 사용 언어, 연락처 등)
+- 최대 4명 팀원 입력 (이름, 학번, 학과, 성별, 역할, 사용 언어, 연락처 등)
 - 포트폴리오 항목 추가 (제목, 기간, 역할, 설명)
 - 포트폴리오 링크 및 파일 첨부 (PDF, DOC, PPT, Excel, ZIP, 이미지)
 - 생성된 팀 페이지 결과 확인 및 팀원 수정/삭제
@@ -225,8 +225,8 @@ docker compose up --build
 
 <table>
   <tr>
-    <td align="center" width="220">
-      <img src="Subject3_2/static/images/root-member1.png" width="100"/><br/><br/>
+    <td align="center" width="320">
+      <img src="Subject3_2/static/images/root-member1.png" width="160"/><br/><br/>
       <b>오승현</b><br/>
       <sub>🎓 교육학과</sub><br/>
       <sub>👑 팀장 · 프론트엔드</sub><br/><br/>
@@ -234,8 +234,8 @@ docker compose up --build
         <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/>
       </a>
     </td>
-    <td align="center" width="220">
-      <img src="Subject3_2/static/images/root-member2.png" width="100"/><br/><br/>
+    <td align="center" width="320">
+      <img src="Subject3_2/static/images/root-member2.png" width="160"/><br/><br/>
       <b>김유미</b><br/>
       <sub>🎓 산업시스템공학과</sub><br/>
       <sub>🛠️ 팀원 · 백엔드</sub><br/><br/>
@@ -243,8 +243,8 @@ docker compose up --build
         <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/>
       </a>
     </td>
-    <td align="center" width="220">
-      <img src="Subject3_2/static/images/root-member3.png" width="100"/><br/><br/>
+    <td align="center" width="320">
+      <img src="Subject3_2/static/images/root-member3.png" width="160"/><br/><br/>
       <b>오지윤</b><br/>
       <sub>🎓 경영정보학과</sub><br/>
       <sub>🛠️ 팀원 · 백엔드</sub><br/><br/>
