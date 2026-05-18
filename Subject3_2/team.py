@@ -165,7 +165,7 @@ def build_image_prompt(image_type, user_prompt, team=None, member=None):
 
 
 def generate_gemini_image(prompt, subfolder="ai", aspect_ratio="1:1"):
-    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         return None
 
