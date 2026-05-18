@@ -12,6 +12,8 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Google Gemini](https://img.shields.io/badge/Gemini_AI-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
 [![Pillow](https://img.shields.io/badge/Pillow-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python-pillow.org/)
+[![python-dotenv](https://img.shields.io/badge/python--dotenv-ECD53F?style=for-the-badge&logo=dotenv&logoColor=black)](https://pypi.org/project/python-dotenv/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
 </div>
 
@@ -40,7 +42,7 @@ Google Gemini AI를 활용한 프로필/팀 이미지 자동 생성, 질문게�
 
 ### ✏️ 팀페이지 제작
 - 팀명, 팀 소개, 팀 이미지 입력
-- 최대 **4명** 팀원 입력 (이름, 학번, 학과, 성별, 역할, 사용 언어, 연락처 등)
+- 최대 4명 팀원 입력 (이름, 학번, 학과, 성별, 역할, 사용 언어, 연락처 등)
 - 포트폴리오 항목 추가 (제목, 기간, 역할, 설명)
 - 포트폴리오 링크 및 파일 첨부 (PDF, DOC, PPT, Excel, ZIP, 이미지)
 - 생성된 팀 페이지 결과 확인 및 팀원 수정/삭제
@@ -73,6 +75,10 @@ Google Gemini AI를 활용한 프로필/팀 이미지 자동 생성, 질문게�
     ├── team.py                   # Flask 앱 메인
     ├── requirements.txt
     ├── .env                      # 환경 변수 (API 키 등)
+    ├── Dockerfile                # Docker 이미지 빌드 설정
+    ├── docker-compose.yml        # Docker Compose 실행 설정
+    ├── .dockerignore
+    ├── uwsgi.ini                 # uWSGI 서버 설정
     ├── data/
     │   ├── members.json          # ROOT 팀/팀원 정보 (시드)
     │   ├── posts.json            # 게시판 초기 데이터 (시드)
@@ -83,6 +89,12 @@ Google Gemini AI를 활용한 프로필/팀 이미지 자동 생성, 질문게�
     │       └── comments.json     # 댓글 런타임 데이터
     ├── static/
     │   ├── css/
+    │   │   ├── base.css          # 공통 스타일 (다크모드 포함)
+    │   │   ├── board.css
+    │   │   ├── contact.css
+    │   │   ├── index.css
+    │   │   ├── input.css
+    │   │   └── member_detail.css
     │   ├── images/               # ROOT 팀 고정 이미지
     │   ├── uploads/              # 업로드된 이미지/파일
     │   │   ├── ai/               # AI 생성 이미지
@@ -174,6 +186,8 @@ GEMINI_IMAGE_MODEL=gemini-2.5-flash-image
 
 ## 🚀 실행 방법
 
+### 로컬 실행
+
 **Subject3_2** (팀 소개 웹페이지)
 
 ```bash
@@ -181,6 +195,8 @@ cd Subject3_2
 pip install -r requirements.txt
 python team.py
 ```
+
+접속 주소: `http://127.0.0.1:5000`
 
 **Subject3_1** (입력 폼 실습)
 
@@ -191,41 +207,50 @@ python ex4.py
 
 접속 주소: `http://127.0.0.1:5000`
 
+### Docker 실행
+
+```bash
+cd Subject3_2
+docker compose up --build
+```
+
+접속 주소: `http://localhost:8000`
+
+> `.env` 파일이 `Subject3_2/` 하위에 있어야 합니다.  
+> `instance/`와 `static/uploads/`는 호스트에 볼륨 마운트되어 데이터가 컨테이너 재시작 후에도 유지됩니다.
+
 ---
 
 ## 🌿 ROOT 팀을 소개합니다
 
 <table>
   <tr>
-    <td align="center" width="220">
-      <img src="Subject3_2/static/images/root-member1.png" width="100"/><br/><br/>
+    <td align="center" width="320">
+      <img src="Subject3_2/static/images/root-member1.png" width="160"/><br/><br/>
       <b>오승현</b><br/>
       <sub>🎓 교육학과</sub><br/>
       <sub>👑 팀장 · 프론트엔드</sub><br/><br/>
       <a href="https://github.com/2024110423osh">
         <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/>
       </a>
-      &nbsp;
     </td>
-    <td align="center" width="220">
-      <img src="Subject3_2/static/images/root-member2.png" width="100"/><br/><br/>
+    <td align="center" width="320">
+      <img src="Subject3_2/static/images/root-member2.png" width="160"/><br/><br/>
       <b>김유미</b><br/>
       <sub>🎓 산업시스템공학과</sub><br/>
       <sub>🛠️ 팀원 · 백엔드</sub><br/><br/>
       <a href="https://github.com/yumiykim">
         <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/>
       </a>
-      &nbsp;
     </td>
-    <td align="center" width="220">
-      <img src="Subject3_2/static/images/root-member3.png" width="100"/><br/><br/>
+    <td align="center" width="320">
+      <img src="Subject3_2/static/images/root-member3.png" width="160"/><br/><br/>
       <b>오지윤</b><br/>
       <sub>🎓 경영정보학과</sub><br/>
       <sub>🛠️ 팀원 · 백엔드</sub><br/><br/>
       <a href="https://github.com/JeeyoonO">
         <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/>
       </a>
-      &nbsp;
     </td>
   </tr>
 </table>
